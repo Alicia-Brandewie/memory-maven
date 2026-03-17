@@ -1,67 +1,46 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Codystar:wght@300;400&display=swap');
 
 .codystar-regular {
-  font-family: "Codystar", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Codystar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
-background-color: #DB00A1;
-font-family: "Codystar", Geneva, system-ui; 
-font-size: xx-large;
-color: white;
-text-align: center;
-cursor:pointer;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-    margin-bottom: 100px;
+    background-color: #DB00A1;
+    font-family: "Codystar", Geneva, system-ui;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 100px; */
 
 }
 
 .container {
     display: flex;
     align-items: center;
-     gap: 50px;
-     justify-content: space-between;
+    gap: 1em;
+    justify-content: space-between;
 }
 
-#container-child {
+/* #container-child {
     display: flex;
+} */
 
-}
-
-.button {
-    font-size: 35px;
-    color: white;
-    background-color: none;
-    border-radius: 12px;
-    background-color: #DB00A1;
-    border-color: white;
-    margin: 20px;
-}
-
-.button:hover {
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.button:active {
-  box-shadow: 0 5px gray;
-  transform: translateY(2px);
-  padding: 5px;
-}
 
 .board {
     display: grid;
-    grid-template-rows:repeat(4,1fr);
-    grid-template-columns: repeat(4,1fr);
-    width: 600px;
-    height: 600px;
-    margin: 20px;
-    gap: 20px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* width: 600px; */
+    /* height: 600px; */
+    margin: 1em;
+    gap: .5em;
     user-select: none;
 }
 
@@ -78,11 +57,11 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 .start-board {
     display: grid;
-    grid-template-rows:repeat(4,1fr);
-    grid-template-columns: repeat(4,1fr);
-    width: 600px;
-    height: 600px;
-    gap: 20px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* width: 600px;
+    height: 600px; */
+    /* gap: 20px; */
 }
 
 .hidden {
@@ -90,7 +69,19 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .hidden:hover {
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+    box-shadow:
+        0em .25em .25em 0 rgba(0, 0, 0, 0.24),
+        0em .25em .25em 0 rgba(0, 0, 0, 0.19);
+}
+
+.hidden:active {
+    box-shadow:
+        0 5px gray,
+        0em .25em .25em 0 rgba(0, 0, 0, 0.24),
+        0em .25em .25em 0 rgba(0, 0, 0, 0.19);
+    /* transform: translateY(2px); */
+    /* padding: 5px; */
+}
 
 .cardBack {
     width: 100%;
@@ -101,4 +92,29 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
     justify-content: center;
     align-items: center;
     border-radius: 100px;
+}
+
+.button {
+    font-size: 1.3em;
+    color: white;
+    background-color: none;
+    border-radius: 12px;
+    background-color: #DB00A1;
+    border-color: white;
+    margin: 1em;
+}
+
+.button:hover {
+    box-shadow:
+        /* 0 .25em .25em 0 rgba(0, 0, 0, 0.24),  */
+        /* .25em .25em .25em 0em rgba(0, 0, 0, 0.24), */
+        .25em .25em .25em .25em rgba(0, 0, 0, 0.24);
+}
+
+.button:active {
+    box-shadow:
+        0 5px gray,
+        .25em .25em .25em .25em rgba(0, 0, 0, 0.24);
+    transform: translateY(2px);
+    /* padding: 5px; */
 }
