@@ -1,4 +1,5 @@
 /*-------------- Constants -------------*/
+
 let CARDS = [
     "♡", "♡", "♥", "♥",
     "❀", "❀", "✿", "✿",
@@ -7,6 +8,7 @@ let CARDS = [
 ]
 
 /*---------- Variables (state) ---------*/
+
 let click = 0
 
 let firstCardClicked
@@ -40,6 +42,7 @@ const bannerMessage = document.querySelector("#banner-message")
 const startBoard = document.querySelector(".board")
 
 /*-------------- Functions -------------*/
+
 function shuffleCards(CARDS) {
     for (let i = 0; i < CARDS.length; i++) {
         randomizedSymbols += CARDS[i];
@@ -75,12 +78,18 @@ cardEls.forEach((card) => {
                 firstCardId = event.target.id
                 cardEls[firstCardId].classList.toggle('hidden')
                 click++
+
             } else {
+                if (firstCardClicked && event.target.id === firstCardId) {
+                    secondCardClicked = undefined
+                } 
+                else {
                 secondCardClicked = event.target.innerText;
                 secondCardId = event.target.id
                 cardEls[secondCardId].classList.toggle('hidden')
                 click++
-            };
+                }
+            };       
         }
     });
 });
@@ -98,6 +107,7 @@ const checkforMatch = () => {
 
     endingTheGame()
 };
+
 
 
 const resetButtonElement = document.querySelector('#resetButton')
