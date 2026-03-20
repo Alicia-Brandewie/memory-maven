@@ -95,6 +95,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    -webkit-tap-highlight-color: transparent; /*removed the whole screen flash when touched*/
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-tap-highlight-color */
 }
 
 .container {
