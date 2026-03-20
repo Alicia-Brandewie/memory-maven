@@ -68,7 +68,7 @@ cardEls.forEach((card) => {
         if (!gameOver) {
             if (click > 1) {
                 click = 0
-                checkforMatch()
+                // setTimeout(checkforMatch, 3000)
                 firstCardClicked = undefined
                 secondCardClicked = undefined
             }
@@ -82,14 +82,16 @@ cardEls.forEach((card) => {
             } else {
                 if (firstCardClicked && event.target.id === firstCardId) {
                     secondCardClicked = undefined
-                } 
-                else {
-                secondCardClicked = event.target.innerText;
-                secondCardId = event.target.id
-                cardEls[secondCardId].classList.toggle('hidden')
-                click++
                 }
-            };       
+                else {
+                    secondCardClicked = event.target.innerText;
+                    secondCardId = event.target.id
+                    cardEls[secondCardId].classList.toggle('hidden')
+                    click++
+                    checkforMatch()
+
+                }
+            };
         }
     });
 });
@@ -99,8 +101,12 @@ const checkforMatch = () => {
         pairs++
         pairsElement.textContent = "Pairs: " + pairs;
     } else {
+        setTimeout( () => {
         cardEls[firstCardId].classList.toggle('hidden')
         cardEls[secondCardId].classList.toggle('hidden')
+        },
+        1000)
+
     }
     tries++
     triesElement.textContent = "Tries: " + tries;
