@@ -115,8 +115,6 @@ const checkforMatch = () => {
     endingTheGame()
 };
 
-
-
 const resetButtonElement = document.querySelector('#resetButton')
 
 const resetGame = () => {
